@@ -27,15 +27,16 @@ class Star {
 		}
 	}
 
-	public function draw(buffer:BitmapData) {
+	public function draw(buffer:BitmapData, t:Float) {
 		var dist = Math.max(Math.min(1.0 - z*0.2, 1.0), 0.0);
 		var px = Std.int((x - buffer.width/2)/z + buffer.width/2);
-		var py = Std.int((y - buffer.height/2)/z + buffer.height/2) + Math.sin(Math.PI*2 + Date.now().getTime() * 0.0002) * 500;
+		var py = Std.int((y - buffer.height/2)/z + buffer.height/2) + Math.sin(Math.PI*2 + t * 0.0002) * 500;
 		var vignetting = 1.0 - Math.sqrt(
 			(py-buffer.height/2)*(py-buffer.height/2) + (px-buffer.width/2)*(px-buffer.width/2)
 		)/Math.sqrt((buffer.width/2)*(buffer.width/2) + (buffer.height/2)*(buffer.height/2));
 
 		var brightness = Std.int(Math.sin(vignetting*2.0) * dist * 255);
+
 /*		buffer.setPixel(
 			px, 
 			py, 

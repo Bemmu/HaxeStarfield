@@ -38,8 +38,9 @@ class Game {
 		}
 
 		buffer.fillRect(new Rectangle(0, 0, 960, 600), 0xff000000);
+		var t = Date.now().getTime();
 		for (star in stars) {
-			star.draw(buffer);
+			star.draw(buffer, t);
 			star.z -= 0.05;
 			if (star.z < 0) {
 				star.z = 10.0;
