@@ -1,8 +1,8 @@
-A simple starfield made as a warmup for Ludum Dare 32.
+Transparent sprite stress test. 
 
 ![stars](https://raw.github.com/Bemmu/HaxeStarfield/master/img/stars.png "Stars")
 
-Haxe is faster than I expected. I can have hundreds of thousands of stars moving simultaneously on my MBP with no optimization.
-
+The number of stars is increased gradually until frames per second falls under 60.
+My system can do about 10,000 at a time.
 
 

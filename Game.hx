@@ -15,7 +15,7 @@ class Game {
 	var fpsCountStart = 0.0;
 
 	function increaseStrain() {
-		var i = stars.length == 0 ? 1000 : stars.length * 0.1;
+		var i = stars.length == 0 ? 1000 : stars.length * 0.5;
 		while (i > 0) {
 			stars.push(new Star());
 			i--;
