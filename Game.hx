@@ -28,6 +28,26 @@ class Game {
 	}
 
 	public function new() {
+		// lame -b 320 -h engine.wav engine.mp3
+		haxe.Timer.delay(function () {
+			var data = haxe.Resource.getBytes("engine-sound");
+			var snd = new Sound();
+			snd.loadCompressedDataFromByteArray(data.getData(), data.length);
+			snd.play(0, 9999);
+		}, 250);
+		haxe.Timer.delay(function () {
+			var data = haxe.Resource.getBytes("engine-sound");
+			var snd = new Sound();
+			snd.loadCompressedDataFromByteArray(data.getData(), data.length);
+			snd.play(0, 9999);
+		}, 1000);
+		haxe.Timer.delay(function () {
+			var data = haxe.Resource.getBytes("engine-sound");
+			var snd = new Sound();
+			snd.loadCompressedDataFromByteArray(data.getData(), data.length);
+			snd.play(0, 9999);
+		}, 1500);
+
 		buffer = new BitmapData(960, 600);
 		flash.Lib.current.addChild(new Bitmap(buffer));
 		flash.Lib.current.stage.addEventListener(Event.ENTER_FRAME, refresh);
